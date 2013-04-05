@@ -1,0 +1,24 @@
+#!/bin/sh
+
+. /lib/lsb/init-functions
+
+case "${1}" in
+   start)
+      log_info_msg "Setting fake hardware clock..."
+      fake-hwclock load
+      evaluate_retval
+      ;;
+
+   stop)
+      log_info_msg "Storing fake hardware clock..."
+      fake-hwclock save
+      evaluate_retval
+      ;;
+
+   *)
+      echo "Usage: ${0} {start|stop}"
+      exit 1
+      ;;
+esac
+
+exit 0
