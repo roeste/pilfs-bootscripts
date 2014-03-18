@@ -1,4 +1,4 @@
-# PiLFS Bootscripts 20130401 v1.0
+# PiLFS Bootscripts 20140312 v1.0
 ## Raspberry Pi specific bootscripts for LFS
 ### http://www.intestinate.com/pilfs
 
