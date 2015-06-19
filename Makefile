@@ -20,11 +20,11 @@ uninstall-networkfix:
 
 install-swapfix:
 	mv ${EXTDIR}/rc.d/rcS.d/S20swap ${EXTDIR}/rc.d/rcS.d/S60swap
-	echo "vm.swappiness=0" >> ${EXTDIR}/sysctl.conf
+	echo "vm.swappiness=1" >> ${EXTDIR}/sysctl.conf
 
 uninstall-swapfix:
 	mv ${EXTDIR}/rc.d/rcS.d/S60swap ${EXTDIR}/rc.d/rcS.d/S20swap
-	sed -i '/vm.swappiness=0/d' ${EXTDIR}/sysctl.conf
+	sed -i '/vm.swappiness=1/d' ${EXTDIR}/sysctl.conf
 
 install-fake-hwclock:
 	install -m ${MODE} sbin/fake-hwclock   ${SBIN}
