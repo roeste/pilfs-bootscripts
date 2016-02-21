@@ -45,7 +45,6 @@ uninstall-fake-hwclock:
 	rm ${EXTDIR}/rc.d/rc6.d/K01fake-hwclock
 
 install-rngd:
-	echo "bcm2708-rng" >>          ${EXTDIR}/sysconfig/modules
 	install -m ${MODE} init.d/rngd ${EXTDIR}/rc.d/init.d/
 	ln -sf  ../init.d/rngd ${EXTDIR}/rc.d/rc0.d/K45rngd
 	ln -sf  ../init.d/rngd ${EXTDIR}/rc.d/rc1.d/K45rngd
@@ -56,7 +55,6 @@ install-rngd:
 	ln -sf  ../init.d/rngd ${EXTDIR}/rc.d/rc6.d/K45rngd
 
 uninstall-rngd:
-	sed -i '/bcm2708-rng/d' ${EXTDIR}/sysconfig/modules
 	rm ${EXTDIR}/rc.d/init.d/rngd
 	rm ${EXTDIR}/rc.d/rc0.d/K45rngd
 	rm ${EXTDIR}/rc.d/rc1.d/K45rngd
